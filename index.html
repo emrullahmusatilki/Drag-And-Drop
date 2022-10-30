@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <title>EMT - Drag & Drop</title>
+        <link rel="icon" type="image/x-icon" href="../Drag-And-Drop/images/logo.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- CSS only -->
+        <link href="../Drag-And-Drop/styles/style.css" rel="stylesheet">
+        <link href="../Drag-And-Drop/styles/bootstrap.min.css" rel="stylesheet">
+        <link href="../Drag-And-Drop/styles/jquery.dataTables.min.css" rel="stylesheet">
+    </head>
+    <body class="body bg-dark">
+
+
+        <div class="container-fluid body-content align-middle min-vh-100">
+            
+            <div class="container-fluid mt-4 border shadow-lg mb-5 pl-05 pr-0" style="max-width:1200px; height:auto; border-radius:15px; background-color:rgba(240, 240, 240, 0.70)">
+                <div class="my-4 pl-0 ml-0">
+                    <h1 class="display-4 text-center mb-4" style="font-size:25px;">Drag & Drop</h1>
+                
+                    <div class="container-fluid ">
+
+                        <table class="table table-full-width table-responsive-sm border hover compact" id="myTable">
+                            <thead class="thead-dark prevent-select">
+                                <tr>
+                                    <th scope="col" class="text-center"><small>Move</small></th>
+                                    <th scope="col" class="text-center"><small>İsim:</small></th>
+                                    <th scope="col" class="text-center"><small>Veri Tipi:</small></th>
+                                    <th scope="col" class="text-center"><small>Sil:</small></th>
+                                </tr>
+                            </thead class="bg-dark">
+                            <tbody class="cntainr bg-dark">
+                                <tr class="draggable" draggable="true">
+                                    <td class="bg-secondary move-dragged"></td>
+                                    <td class="prevent-select">İsim</td>
+                                    <td class="prevent-select">TextBox</td>
+                                    <td class="prevent-select"><button class="btn btn-danger btn-sm" type="button">Sil</button></td>
+                                </tr>
+                                <tr class="draggable" draggable="true">
+                                    <td class="bg-secondary move-dragged"></td>
+                                    <td class="prevent-select">İsim</td>
+                                    <td class="prevent-select">Radio Button</td>
+                                    <td class="prevent-select"><button class="btn btn-danger btn-sm" type="button">Sil</button></td>
+                                </tr>
+                                 <tr class="draggable" draggable="true">
+                                    <td class="bg-secondary move-dragged"></td>
+                                    <td class="prevent-select">İsim</td>
+                                    <td class="prevent-select">CheckBox Button</td>
+                                    <td class="prevent-select"><button class="btn btn-danger btn-sm" type="button">Sil</button></td>
+                                </tr>
+                                <tr class="draggable" draggable="true">
+                                    <td class="bg-secondary move-dragged"></td>
+                                    <td class="prevent-select">İsim</td>
+                                    <td class="prevent-select">DropdownList</td>
+                                    <td class="prevent-select"><button class="btn btn-danger btn-sm" type="button">Sil</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-full-width table-responsive-sm border hover compact" id="myTable2">
+                            <thead class="thead-dark prevent-select">
+                                <tr>
+                                    <th scope="col" class="text-center"><small>Move</small></th>
+                                    <th scope="col" class="text-center"><small>İsim:</small></th>
+                                    <th scope="col" class="text-center"><small>Veri Tipi:</small></th>
+                                    <th scope="col" class="text-center"><small>Sil:</small></th>
+                                </tr>
+                            </thead>
+                            <tbody class="cntainr">
+                            
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="../Drag-And-Drop/scripts/jquery-3.2.1.min.js"></script>
+        <script src="../Drag-And-Drop/scripts/jquery.dataTables.min.js"></script>
+        <script src="../Drag-And-Drop/scripts/bootstrap.min.js"></script>
+        <script src="../Drag-And-Drop/scripts/script.js"></script>
+        <script>
+            $('#myTable').DataTable({
+                order: [[0, "desc"]],
+                lengthChange: false,
+                paging: false,
+                ordering: false,
+                responsive: true,
+                info: false,
+                searching: false,
+                language: {
+                    emptyTable: " "
+                },
+                columns: [
+                    { width: "5%" },
+                    { width: "40%" },
+                    { width: "45%" },
+                    { width: "10%" }
+                ]
+            });
+
+            $('#myTable2').DataTable({
+                order: [[0, "desc"]],
+                lengthChange: false,
+                paging: false,
+                ordering: false,
+                responsive: true,
+                info: false,
+                rowReorder: true,
+                searching: false,
+                language: {
+                    emptyTable: " "
+                },
+                columns: [
+                    { width: "5%" },
+                    { width: "40%" },
+                    { width: "45%" },
+                    { width: "10%" }
+                ]
+            });
+
+
+            // $('#myTable').on( 'mousedown.row-reorder', function (e, diff, edit) {
+            //     var table = $('#myTable').DataTable();
+            //     if (!table.rows().count()) {
+            //     }
+            //     else
+            //     {
+            //         // alert(table.rows().count());
+            //     }
+            // });
+
+            // $('#myTable2').on( 'mousedown.row-reorder', function (e, diff, edit) {
+            //     var table = $('#myTable2').DataTable();
+            //     if (!table.rows().count()) {
+            //     }
+            //     else
+            //     {
+            //         // alert(table.rows().count());
+            //     }
+            // });
+
+        </script>
+    </body>
+</html>

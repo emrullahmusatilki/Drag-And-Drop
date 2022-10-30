@@ -1,0 +1,15 @@
+.draggable {
+    background-color: #f5f6fa;
+    cursor: move;
+}
+
+.draggable.dragging {
+    opacity: .5;
+    border-style: dashed;
+  }
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
